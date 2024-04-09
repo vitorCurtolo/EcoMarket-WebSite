@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoMarket Produto Orgânicos</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/responsive.css">
+    <script src="./script/script.js"></script>
     <script
       src="https://kit.fontawesome.com/0e53af926d.js"
       crossorigin="anonymous"
@@ -32,7 +34,33 @@
             <a href=""><i class="fa fa-bag-shopping"></i></a>
           </div>
         </div>
+
+        <div class="menu-mobile-icon">
+          <a href="" onclick="adjustLayoutOn()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
       </div>
+
+      <div id="header-mob">
+
+        <!-- <div class="menu-mobile-icon-mob">
+          <a href="" onclick="adjustLayoutOff()"><i class="fa-solid fa-bars"></i></a>
+        </div> -->
+        
+        <div class="header-list-mob" id="teste">
+          <nav class="header-list-nav-mob">
+            <ul>
+              <li><a class="active" href="index.html">Home</a></li>
+              <li><a href="blog.html">Produtos</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </nav>
+        </div>        
+        
+      </div>
+
+
     </header>
 
     <!--main section-->
@@ -276,6 +304,5 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
   </body>
 </html>
