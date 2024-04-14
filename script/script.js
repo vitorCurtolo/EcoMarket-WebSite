@@ -37,6 +37,24 @@
 //   }
 // });
 
+function formatPhoneNumber() {
+    var input = document.getElementById("phone");
+    var numbers = input.value.replace(/\D/g, '');
+    var formattedNumber = '';
+
+    if (numbers.length > 0) {
+      formattedNumber = '(' + numbers.substring(0, 2) + ')';
+    }
+    if (numbers.length > 2) {
+      formattedNumber += ' ' + numbers.substring(2, 7);
+    }
+    if (numbers.length > 6) {
+      formattedNumber += '-' + numbers.substring(7, 11);
+    }
+
+    input.value = formattedNumber;
+  }
+
 
 
 

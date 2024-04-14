@@ -103,8 +103,7 @@ body {
   color: #1a1a1a;
   transition: 0.3s ease;
 }
-.header-list-nav ul a:hover,
-.header-list-nav ul a.active {
+.header-list-nav ul a:hover {
   color: #088178;
   content: "";
 }
@@ -113,12 +112,10 @@ body {
   padding-left: 20px;
   transition: 0.3s ease;
 }
-.header-list-icon a:hover,
-.header-list-nav ul a.active {
+.header-list-icon a:hover {
   color: #088178;
 }
-.header-list-nav ul li a:hover::after,
-.header-list-nav ul li a.active::after {
+.header-list-nav ul li a:hover::after{
   content: "";
   width: 30%;
   height: 2px;
