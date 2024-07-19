@@ -253,6 +253,9 @@ main {
 }
 
 /* feature section styles */
+.produto-sec{
+  padding: 40px 0;
+}
 
 .produto-sec .pro-colecao {
   display: flex;
