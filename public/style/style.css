@@ -257,6 +257,17 @@ main {
   padding: 40px 0;
 }
 
+
+.produto-card {
+  transition: transform 0.9s ease; /* Diminua o tempo para 0.2 segundos */
+}
+
+.produto-sec .produto-card:hover {
+  transform: scale(1.1);
+  border: 1px solid #03441e;
+
+}
+
 .produto-sec .pro-colecao {
   display: flex;
   flex-wrap: wrap;
