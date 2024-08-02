@@ -13,62 +13,62 @@ import CadCliente from '../cadastroCliente/CadCliente';
 
 
 
-function CadProd() {
+function CadProd() { 
     return (
         <main className="mainCadCliente">
 
-            <div class="form-main">
-                <div class="form-card">
+            <div className="form-main">
+                <div className="form-card">
                     <form action="./cadastroPessoa.html" method="POST">
-                        <div class="form-title">
-                            <h2 class="">Cadastro de Produto</h2>
+                        <div className="form-title">
+                            <h2 className="">Cadastro de Produto</h2>
                             <p>
                                 Cadastre o produto para sua loja!
                             </p>
                         </div>
 
-                        <div class="form-input-flex">
+                        <div className="form-input-flex">
                             <div>
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" name="nome" id="nome" class="form-input" />
+                                <label htmlFor="nome" className="form-label">Nome</label>
+                                <input type="text" name="nome" id="nome" className="form-input" />
                             </div>
 
                             <div>
-                                <label for="preco" class="form-label"> Preço </label>
-                                <input type="text" name="preco" id="preco" class="form-input" required placeholder="R$ 0,00" />
-                            </div>
-                        </div>
-
-                        <div class="form-input-flex">
-                            <div>
-                                <label for="categoria" class="form-label"> Categoria </label>
-                                <input type="text" name="categoria" id="categoria" class="form-input" required placeholder="Frutas/Legumes/Verduras" />
-                            </div>
-
-                            <div>
-                                <label for="descricao" class="form-label"> Descrição </label>
-                                <input type="text" name="descricao" id="descricao" class="form-input" />
+                                <label htmlFor="preco" className="form-label"> Preço </label>
+                                <input type="text" name="preco" id="preco" className="form-input" required placeholder="R$ 0,00" />
                             </div>
                         </div>
 
-                        <div class="form-input-flex">
+                        <div className="form-input-flex">
                             <div>
-                                <label for="quantidade" class="form-label"> Estoque </label>
-                                <input type="number" name="quantidade" id="quantidade" class="form-input" />
+                                <label htmlFor="categoria" className="form-label"> Categoria </label>
+                                <input type="text" name="categoria" id="categoria" className="form-input" required placeholder="Frutas/Legumes/Verduras" />
                             </div>
 
                             <div>
-                                <label for="validade" class="form-label"> Data de Validade </label>
-                                <input type="date" name="validade" id="validade" class="form-input" />
+                                <label htmlFor="descricao" className="form-label"> Descrição </label>
+                                <input type="text" name="descricao" id="descricao" className="form-input" />
+                            </div>
+                        </div>
+
+                        <div className="form-input-flex">
+                            <div>
+                                <label htmlFor="quantidade" className="form-label"> Estoque </label>
+                                <input type="number" name="quantidade" id="quantidade" className="form-input" />
+                            </div>
+
+                            <div>
+                                <label htmlFor="validade" className="form-label"> Data de Validade </label>
+                                <input type="date" name="validade" id="validade" className="form-input" />
                             </div>
                         </div>
 
                         <div>
-                            <label for="imagem" class="form-label">Imagem produto</label>
+                            <label htmlFor="imagem" className="form-label">Imagem produto</label>
                             <input type="file" name="imagem" id="imagem" />
                         </div>
 
-                        <input type="button" class="formbold-btn" onclick="enviar()" value="Enviar" />
+                        <input type="button" className="formbold-btn"  value="Enviar" />
 
                     </form>
                 </div>

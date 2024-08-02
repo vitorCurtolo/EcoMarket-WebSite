@@ -40,10 +40,10 @@ function Header() {
                 <div className="header-list-mob" id="teste">
                     <nav className="header-list-nav-mob">
                         <ul>
-                            <li><a className="active" href="./index.html">Home</a></li>
-                            <li><a href="#">Produtos</a></li>
-                            <li><a href="./src/cadastroPessoa.html">Cadastro</a></li>
-                            <li><a href="#">Contato</a></li>
+                        <li><Link to="/home">Home</Link></li>
+                            <li><Link to="/produtos">Produtos</Link></li>
+                            <li><Link to="/cadastro">Cadastro</Link></li>
+                            <li><Link to="/produtos">Contato</Link></li>
                         </ul>
                     </nav>
                 </div>
