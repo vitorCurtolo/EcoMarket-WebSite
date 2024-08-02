@@ -1,0 +1,51 @@
+/* footer section styles */
+
+#footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 75px;
+    background-color: #ececec;
+}
+
+#footer p,
+#footer a {
+    color: rgb(109, 109, 109);
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #088178;
+}
+
+#footer .sobre a {
+    display: block;
+    padding: 8px 0;
+}
+
+#footer .conta a {
+    display: block;
+    padding: 8px 0;
+}
+
+
+/*
+Responsividade para footer
+*/
+@media (max-width: 730px) {
+    #footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 730px) {
+    #footer>div {
+        min-width: 100%;
+        margin: 5px 0;
+    }
+
+    .sociais a {
+        margin: 5px;
+    }
+}
