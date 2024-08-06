@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 function CadCliente() {
 
     //formatação de campo telefone
-    
+
     const [phone, setPhone] = useState('');
 
     const handleInputChange = (event) => {
@@ -64,7 +64,7 @@ function CadCliente() {
         document.getElementById("logradouro").value = "";
         document.getElementById("uf").value = "";
     }
-    
+
     //consultar api de CEP
 
     const [json, setJson] = useState({});
@@ -150,6 +150,14 @@ function CadCliente() {
                                 <input type="email" name="email" id="email" className="form-input" required placeholder="seuemail@dominio.com" />
                             </div>
                             <div>
+                                <label htmlFor="email" className="form-label"> Senha </label>
+                                <input type="password" name="senha" id="senha" className="form-input" required />
+                            </div>
+
+                        </div>
+
+                        <div className="form-input-flex">
+                            <div>
                                 <label htmlFor="phone" className="form-label"> Telefone </label>
                                 <input
                                     className='form-input'
@@ -162,9 +170,6 @@ function CadCliente() {
                                     maxLength="14"
                                 />
                             </div>
-                        </div>
-
-                        <div className="form-input-flex">
                             <div>
                                 <label htmlFor="cep" className="form-label"> CEP </label>
                                 <input
@@ -177,15 +182,19 @@ function CadCliente() {
                                     onChange={(e) => setCep(e.target.value)}
                                 />
                             </div>
+
+                        </div>
+
+                        <div className="form-input-flex">
                             <div>
                                 <label htmlFor="bairro" className="form-label"> Bairro </label>
                                 <input type="text" name="bairro" id="bairro" className="form-input" />
                             </div>
-                        </div>
 
-                        <div className="form-input-g">
-                            <label htmlFor="logradouro" className="form-label">Endereço</label>
-                            <input type="text" name="logradouro" id="logradouro" className="form-input" />
+                            <div>
+                                <label htmlFor="logradouro" className="form-label">Endereço</label>
+                                <input type="text" name="logradouro" id="logradouro" className="form-input" />
+                            </div>
                         </div>
 
                         <div className="form-input-flex">
