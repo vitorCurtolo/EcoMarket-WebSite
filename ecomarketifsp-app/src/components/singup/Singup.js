@@ -1,17 +1,57 @@
 import React, { useEffect, useState } from "react";
 import {
-  Link
+  Link, Navigate, useNavigate 
 } from "react-router-dom";
 import Image from "../../assets/img/cestaDesenho.png";
-import Logo from "../../assets/img/logo.png";
-import GoogleSvg from "../../assets/img/icons8-google.svg";
+import './Singup.css';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../assets/js/env.js';
 
 import './Singup.css';
 
 
 
 const Singup = () => {
-  const [ showPassword, setShowPassword ] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleEmailChange = (event) => {
+    setUserEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setUserPassword(event.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, userEmail, userPassword);
+      
+      //alerta para usuário
+      console.log('User signed up:', userCredential.user);
+      alert("Usuário cadastrado com sucesso");
+
+      //limpar campos de login
+      document.getElementById("userEmail").value = "";
+      document.getElementById("userPassword").value = "";
+
+      //redireciona
+      navigate("/home");
+
+    } catch (error) {
+
+      console.error('Error signing up:', error);
+      alert("Erro ao cadastrar", error);
+
+      //limpar campos de login
+      document.getElementById("userEmail").value = "";
+      document.getElementById("userPassword").value = "";
+    }
+  };
 
 
   return (
@@ -22,21 +62,33 @@ const Singup = () => {
       <div className="login-right">
         <div className="login-right-container">
           <div className="login-center">
-            <h2>EcoMarket</h2>
+            <h2>Bem-Vindo ao EcoMarket</h2>
             <p>Faça seu cadastro aqui!</p>
-            <form>
-              <input type="email" placeholder="Email" />
+            <form onSubmit={handleSignup}>
+              <input
+                type="email"
+                id="userEmail"
+                placeholder="Email"
+                value={userEmail}
+                onChange={handleEmailChange}
+              />
               <div className="pass-input-div">
-                <input type={showPassword ? "text" : "password"} placeholder="Senha" />
+                <input
+                  id="userPassword"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Senha"
+                  value={userPassword}
+                  onChange={handlePasswordChange}
+                />
               </div>
               <div className="login-center-buttons">
-                <button type="button">Log In</button>
+                <button type="submit">Cadastre-se</button>
               </div>
             </form>
           </div>
 
           <p className="login-bottom-p">
-            Já possue conta? <Link to="/login">Log in</Link>
+            Já tem uma conta? <Link to="/login">Log in</Link>
           </p>
         </div>
       </div>

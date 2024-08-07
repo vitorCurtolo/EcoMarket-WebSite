@@ -1,10 +1,6 @@
 
 import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    RouterProvider,
-    Route,
-    Link,
+    Link
 } from "react-router-dom";
 import React, { useState } from 'react';
 import './Header.css';

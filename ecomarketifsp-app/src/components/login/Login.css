@@ -96,7 +96,7 @@ form input[type='text']
   outline: none;
 }
 
-form button[type='button'] {
+form button {
   width: 100%;
   padding: 16px;
   border: none;

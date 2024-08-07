@@ -1,17 +1,44 @@
 import React, { useEffect, useState } from "react";
 import {
-  Link
+  Link, useNavigate
 } from "react-router-dom";
 import Image from "../../assets/img/cestaDesenho.png";
-import Logo from "../../assets/img/logo.png";
-import GoogleSvg from "../../assets/img/icons8-google.svg";
 
 import './Login.css';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../assets/js/env.js';
 
 
 
 const Login = () => {
-  const [ showPassword, setShowPassword ] = useState(false);
+
+  const navigate = useNavigate();
+
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleEmailChange = (event) => {
+    setUserEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setUserPassword(event.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, userEmail, userPassword);
+      console.log('User logged in:', userCredential.user);
+
+      //redireciona
+      navigate("/home");
+    } catch (error) {
+      alert("Erro ao logar")
+      console.error('Error logging in:', error);
+    }
+  };
 
 
   return (
@@ -24,12 +51,22 @@ const Login = () => {
           <div className="login-center">
             <h2>Bem-Vindo de volta!</h2>
             <p>Entre com seus dados</p>
-            <form>
-              <input type="email" placeholder="Email" />
+            <form onSubmit={handleLogin}>
+              <input
+                type="email"
+                id="userEmail"
+                placeholder="Email"
+                value={userEmail}
+                onChange={handleEmailChange}
+              />
               <div className="pass-input-div">
-                <input type={showPassword ? "text" : "password"} placeholder="Senha" />
-                
-                
+                <input
+                  id="userPassword"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Senha"
+                  value={userPassword}
+                  onChange={handlePasswordChange}
+                />
               </div>
 
               <div className="login-center-options">
@@ -38,7 +75,7 @@ const Login = () => {
                 </a>
               </div>
               <div className="login-center-buttons">
-                <button type="button">Log In</button>
+                <button type="submit">Log In</button>
               </div>
             </form>
           </div>
