@@ -1,6 +1,9 @@
 import './CadCliente.css';
 import '../../assets/styles/fonts.css';
 import React, { useEffect, useState } from 'react';
+import { useAuth } from '../../context/AuthContext';
+import { collection, addDoc } from "firebase/firestore"; 
+import {db} from '../../assets/js/env' 
 
 
 function CadCliente() {
@@ -8,6 +11,19 @@ function CadCliente() {
     //formatação de campo telefone
 
     const [phone, setPhone] = useState('');
+    const [nome, setNome] = useState('');
+    const [sobreNome, setSobreNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [cep, setCep] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [estado, setEstado] = useState('');
+    const [numero, setNumero] = useState('');
+    const [complemento, setComplemento] = useState('');
+
+    const [cliente, setCliente] = useState('');
+    const { currentUser } = useAuth();
 
     const handleInputChange = (event) => {
         const input = event.target.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
@@ -31,33 +47,6 @@ function CadCliente() {
         return `(${value.slice(0, 2)})${value.slice(2, 7)}-${value.slice(7, 11)}`;
     };
 
-    // function enviar() {
-    //     var nome = document.getElementById("nome").value;
-    //     var sobreNome = document.getElementById("sobreNome").value;
-    //     var email = document.getElementById("email").value;
-    //     var phone = document.getElementById("phone").value;
-
-    //     var infos = "Nome Completo: " + nome + " " + sobreNome +
-    //         "\nE-mail: " + email +
-    //         "\nTelefone: " + phone +
-    //         "\nEndereço: ";
-
-    //     console.log(infos);
-    //     alert("Dados Enviados");
-
-    //     document.getElementById("nome").value = "";
-    //     document.getElementById("sobreNome").value = "";
-    //     document.getElementById("email").value = "";
-    //     document.getElementById("phone").value = "";
-    //     document.getElementById("cep").value = "";
-    //     document.getElementById("bairro").value = "";
-    //     document.getElementById("localidade").value = "";
-    //     document.getElementById("logradouro").value = "";
-    //     document.getElementById("uf").value = "";
-    //     document.getElementById("numero").value = "";
-    //     document.getElementById("comple").value = "";
-    // }
-
     function cleanCepFields() {
         document.getElementById("bairro").value = "";
         document.getElementById("localidade").value = "";
@@ -68,7 +57,7 @@ function CadCliente() {
     //consultar api de CEP
 
     const [json, setJson] = useState({});
-    const [cep, setCep] = useState('');
+
 
     useEffect(() => {
         const cepInput = document.getElementById("cep");
@@ -118,13 +107,53 @@ function CadCliente() {
         };
     }, []);
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const newCliente = {
+            nome: event.target.nome.value,
+            sobreNome: event.target.sobreNome.value,
+            email: currentUser.email,
+            telefone: event.target.phone.value,
+            estado: event.target.uf.value,
+            cidade: event.target.localidade.value,
+            cep: event.target.cep.value,
+            endereco: event.target.logradouro.value,
+            bairro: event.target.bairro.value,
+            numero: event.target.numero.value,
+            complemento: event.target.comple.value,
+        }
+
+        //console.log(newCliente);
+
+        // e.preventDefault();
+        try {
+            await addDoc(collection(db, 'clientes'), {
+                nome: newCliente.nome,
+                sobreNome: newCliente.sobreNome,
+                email: newCliente.email,
+                telefone: newCliente.telefone,
+                estado: newCliente.estado,
+                cidade: newCliente.cidade,
+                cep: newCliente.cep,
+                endereco: newCliente.endereco,
+                bairro: newCliente.bairro,
+                numero: newCliente.numero,
+                complemento: newCliente.complemento,
+                createdAt: new Date()
+            });
+            console.log('Cliente cadastrado com sucesso!');
+        } catch (error) {
+            console.error('Erro ao cadastrar cliente:', error);
+        }
+    };
 
     return (
         <main className="mainCadCliente">
 
             <div className="form-main">
                 <div className="form-card">
-                    <form action="./cadastroPessoa.html" method="POST">
+                    <form onSubmit={handleSubmit}>
                         <div className="form-title">
                             <h2 className="">Cadastro de Clientes</h2>
                             <p>
@@ -144,17 +173,17 @@ function CadCliente() {
                             </div>
                         </div>
 
-                        <div className="form-input-flex">
+                        {/* <div className="form-input-flex">
                             <div>
                                 <label htmlFor="email" className="form-label"> Email </label>
-                                <input type="email" name="email" id="email" className="form-input" required placeholder="seuemail@dominio.com" />
+                                <input type="email" name="email" id="email" className="form-input" />
                             </div>
                             <div>
                                 <label htmlFor="email" className="form-label"> Senha </label>
-                                <input type="password" name="senha" id="senha" className="form-input" required />
+                                <input type="password" name="senha" id="senha" className="form-input" />
                             </div>
 
-                        </div>
+                        </div> */}
 
                         <div className="form-input-flex">
                             <div>
@@ -219,7 +248,7 @@ function CadCliente() {
                             </div>
                         </div>
 
-                        <input type="button" className="formbold-btn" value="Enviar" />
+                        <button className="formbold-btn" type="submit">Cadastrar</button>
 
                     </form>
                 </div>

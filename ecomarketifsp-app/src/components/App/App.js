@@ -8,34 +8,38 @@ import CadCliente from '../cadastroCliente/CadCliente';
 import CadProd from '../cadastroProduto/CadProd';
 import Login from '../login/Login';
 import Singup from '../singup/Singup';
+import { AuthProvider } from '../../context/AuthContext';
+import ProtectedRoute from '../ProtectedRoute';
 
 const AppContent = () => {
-    const location = useLocation();
-    const isLoginRoute = location.pathname === '/login';
-    const isSingupRoute = location.pathname === '/singup';
-  
-    return (
-      <>
-        {!(isLoginRoute || isSingupRoute) && <Header />}
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/home" element={<Main />} />
-          <Route path="/produtos" element={<CadProd />} />
-          <Route path="/cadastro" element={<CadCliente />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/singup" element={<Singup />} />
-        </Routes>
-        {!(isLoginRoute || isSingupRoute) && <Footer />}
-      </>
-    );
-  };
-  
-  const App = () => {
-    return (
+  const location = useLocation();
+  const isLoginRoute = location.pathname === '/login';
+  const isSignupRoute = location.pathname === '/signup';
+
+  return (
+    <>
+      {!(isLoginRoute || isSignupRoute) && <Header />}
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/home" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Singup />} />
+        <Route path="/produtos" element={<ProtectedRoute element={CadProd} />} />
+        <Route path="/cadastro" element={<ProtectedRoute element={CadCliente} />} />
+      </Routes>
+      {!(isLoginRoute || isSignupRoute) && <Footer />}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
       <Router>
         <AppContent />
       </Router>
-    );
-  };
-  
-  export default App;
+    </AuthProvider>
+  );
+};
+
+export default App;
