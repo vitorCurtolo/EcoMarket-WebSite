@@ -2,8 +2,8 @@ import './CadCliente.css';
 import '../../assets/styles/fonts.css';
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { collection, addDoc } from "firebase/firestore"; 
-import {db} from '../../assets/js/env' 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../../assets/js/env'
 
 
 function CadCliente() {
@@ -11,18 +11,7 @@ function CadCliente() {
     //formatação de campo telefone
 
     const [phone, setPhone] = useState('');
-    const [nome, setNome] = useState('');
-    const [sobreNome, setSobreNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [endereco, setEndereco] = useState('');
     const [cep, setCep] = useState('');
-    const [bairro, setBairro] = useState('');
-    const [cidade, setCidade] = useState('');
-    const [estado, setEstado] = useState('');
-    const [numero, setNumero] = useState('');
-    const [complemento, setComplemento] = useState('');
-
-    const [cliente, setCliente] = useState('');
     const { currentUser } = useAuth();
 
     const handleInputChange = (event) => {
@@ -47,11 +36,17 @@ function CadCliente() {
         return `(${value.slice(0, 2)})${value.slice(2, 7)}-${value.slice(7, 11)}`;
     };
 
-    function cleanCepFields() {
+    function cleanFields() {
         document.getElementById("bairro").value = "";
+        document.getElementById("cep").value = "";
         document.getElementById("localidade").value = "";
         document.getElementById("logradouro").value = "";
         document.getElementById("uf").value = "";
+        document.getElementById("nome").value = "";
+        document.getElementById("sobreNome").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("comple").value = "";
+        document.getElementById("numero").value = "";
     }
 
     //consultar api de CEP
@@ -67,7 +62,7 @@ function CadCliente() {
 
             if (!Cep.trim()) {
                 console.log("CEP está vazio");
-                cleanCepFields();
+                cleanFields();
                 return;
             }
 
@@ -83,7 +78,7 @@ function CadCliente() {
                 if (!response.ok) {
                     alert("Erro ao buscar CEP");
                     console.error("Erro ao buscar o CEP");
-                    cleanCepFields();
+                    cleanFields();
                     return;
                 }
 
@@ -96,7 +91,7 @@ function CadCliente() {
             } catch (error) {
                 alert("Erro ao buscar CEP");
                 console.error("Erro ao buscar o CEP:", error);
-                cleanCepFields();
+                cleanFields();
             }
         };
 
@@ -123,10 +118,6 @@ function CadCliente() {
             numero: event.target.numero.value,
             complemento: event.target.comple.value,
         }
-
-        //console.log(newCliente);
-
-        // e.preventDefault();
         try {
             await addDoc(collection(db, 'clientes'), {
                 nome: newCliente.nome,
@@ -142,9 +133,13 @@ function CadCliente() {
                 complemento: newCliente.complemento,
                 createdAt: new Date()
             });
+            alert("Cadastro realizado!!");
             console.log('Cliente cadastrado com sucesso!');
+            cleanFields();
         } catch (error) {
+            alert("Erro ao cadastrar !");
             console.error('Erro ao cadastrar cliente:', error);
+            cleanFields();
         }
     };
 
@@ -172,18 +167,6 @@ function CadCliente() {
                                 <input type="text" name="sobreNome" id="sobreNome" className="form-input" />
                             </div>
                         </div>
-
-                        {/* <div className="form-input-flex">
-                            <div>
-                                <label htmlFor="email" className="form-label"> Email </label>
-                                <input type="email" name="email" id="email" className="form-input" />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="form-label"> Senha </label>
-                                <input type="password" name="senha" id="senha" className="form-input" />
-                            </div>
-
-                        </div> */}
 
                         <div className="form-input-flex">
                             <div>
@@ -253,7 +236,6 @@ function CadCliente() {
                     </form>
                 </div>
             </div>
-
 
         </main>
     );

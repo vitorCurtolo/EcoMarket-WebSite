@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -22,5 +22,14 @@ const auth = getAuth(app);
 
 // Initialize Firestore
 const db = getFirestore(app);
+
+// Configura a persistência de sessão para "SESSION"
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    console.log('Persistência de sessão configurada para SESSION');
+  })
+  .catch((error) => {
+    console.error('Erro ao configurar persistência de sessão:', error);
+  });
 
 export { auth, db };
