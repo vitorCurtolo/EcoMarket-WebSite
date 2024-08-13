@@ -10,6 +10,7 @@ import Login from '../login/Login';
 import Singup from '../singup/Singup';
 import { AuthProvider } from '../../context/AuthContext';
 import ProtectedRoute from '../ProtectedRoute';
+import ProdutosList from '../produtosList/ProdutosList';
 
 const AppContent = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const AppContent = () => {
         <Route path="/signup" element={<Singup />} />
         <Route path="/produtos" element={<ProtectedRoute element={CadProd} />} />
         <Route path="/cadastro" element={<ProtectedRoute element={CadCliente} />} />
+        <Route path="/listar" element={<ProtectedRoute element={ProdutosList} />} />
       </Routes>
       {!(isLoginRoute || isSignupRoute) && <Footer />}
     </>
