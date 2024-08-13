@@ -27,7 +27,7 @@ const AppContent = () => {
         <Route path="/signup" element={<Singup />} />
         <Route path="/produtos" element={<ProtectedRoute element={CadProd} />} />
         <Route path="/cadastro" element={<ProtectedRoute element={CadCliente} />} />
-        <Route path="/listar" element={<ProtectedRoute element={ProdutosList} />} />
+        <Route path="/listar" element={<ProdutosList/>} />
       </Routes>
       {!(isLoginRoute || isSignupRoute) && <Footer />}
     </>

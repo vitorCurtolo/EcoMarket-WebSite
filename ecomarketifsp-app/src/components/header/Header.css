@@ -1,79 +1,78 @@
 /* Estilos gerais */
-header{
+/* header{
   position: fixed;
   width: 100%;
-}
+} */
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--cor-cabecalho);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--cor-cabecalho);
 
+}
+
+.header-logo img {
+  height: 50px;
+}
+
+.header-list-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header-list-nav ul li {
+  display: inline;
+}
+
+.header-list-nav a {
+  text-decoration: none;
+  color: #088178;
+}
+
+/* Estilos para mobile */
+.mobile-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#header-mob {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-list-nav {
+    display: none;
   }
-  
-  .header-logo img {
-    height: 50px;
+
+  .mobile-menu-icon {
+    display: block;
   }
-  
-  .header-list-nav ul {
+
+  #header-mob {
+    display: block;
+    background-color: var(--cor-cabecalho);
+    color: #088178;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
+
+  .header-list-nav-mob ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 0;
   }
-  
-  .header-list-nav ul li {
-    display: inline;
+
+  .header-list-nav-mob ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
   }
-  
-  .header-list-nav a {
+
+  .header-list-nav-mob a {
     text-decoration: none;
     color: #088178;
+    display: block;
   }
-  
-  /* Estilos para mobile */
-  .mobile-menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  #header-mob {
-    display: none;
-  }
-  
-  @media (max-width: 768px) {
-    .header-list-nav {
-      display: none;
-    }
-  
-    .mobile-menu-icon {
-      display: block;
-    }
-  
-    #header-mob {
-      display: block;
-      background-color: var(--cor-cabecalho);
-      color: #088178;
-      position: absolute;
-      top: 60px;
-      width: 100%;
-    }
-  
-    .header-list-nav-mob ul {
-      list-style: none;
-      padding: 0;
-    }
-  
-    .header-list-nav-mob ul li {
-      padding: 10px 20px;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    .header-list-nav-mob a {
-      text-decoration: none;
-      color: #088178;
-      display: block;
-    }
-  }
-  
+}

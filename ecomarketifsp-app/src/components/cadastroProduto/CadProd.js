@@ -37,7 +37,7 @@ function CadProd() {
       setDescricao('');
       setQuantidade('');
       setValidade('');
-      setImagem(null);
+      setImagem('');
     } catch (e) {
       console.error('Erro ao adicionar produto: ', e);
       alert('Erro ao cadastrar produto');
