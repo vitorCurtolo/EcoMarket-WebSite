@@ -1,5 +1,4 @@
-
-.produto-card-ls h3{
+.produto-card-ls h3 {
     color: #088178;
     margin: 5px;
     word-break: break-all;
@@ -56,7 +55,7 @@
 
 /* Cartão de produto */
 .produto-card-ls {
-    background-color:antiquewhite;
+    background-color: antiquewhite;
     width: 24%;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -132,3 +131,180 @@
     font-size: 0.9em;
     color: #777;
 }
+
+.formbold-btn {
+    display: flex;
+    float: right;
+    margin: 10px;
+}
+
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .produto-card-ls {
+        width: 32%;
+        /* 3 items per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .produto-card-ls {
+        width: 48%;
+        /* 2 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .produto-card-ls {
+        width: 100%;
+        /* 1 item per row */
+    }
+
+    .produtos-header-ls h1 {
+        font-size: 2em;
+    }
+
+    .produtos-header-ls p {
+        font-size: 1em;
+    }
+
+    .produtos-section-ls h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .produto-card-ls {
+        padding: 15px;
+    }
+
+    .produto-card-ls h4 {
+        font-size: 1.2em;
+    }
+
+    .produto-card-ls .preco {
+        font-size: 1.4em;
+    }
+
+    .buy-icon {
+        padding: 8px 16px;
+    }
+}
+
+.modal-carrinho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    text-align: center; 
+    background-color: #fdf5e6;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .modal-content h2 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 10px;
+}
+  
+  .modal-content ul {
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .modal-content li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  /* Estilos dos botões */
+.buyButton {
+    background-color: #088178;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buyButton:hover {
+    background-color: #066861;
+}
+
+.closeButton {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #6f0029;
+}
+
+.removeButton {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.removeButton:hover {
+    background-color: #6f0029;
+}
+
+.form-input{
+    width: 60%;
+    height:35px;
+    margin: 5px;
+} 
+.pesquisarButton {
+    height:35px;
+    background-color: #4f484a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pesquisarButton:hover {
+    background-color: #827e7f;
+}
+
