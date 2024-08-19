@@ -10,6 +10,9 @@ import hab_5 from '../../assets/img/habilidades/f5.png';
 import img_cesta1 from '../../assets/img/cesta1.png';
 import img_tomate from '../../assets/img/tomate.png';
 import img_alface from '../../assets/img/alface.png';
+import {
+    Link
+} from "react-router-dom";
 
 
 function Main() {
@@ -19,7 +22,7 @@ function Main() {
                 <h4>Dia de Feira,</h4>
                 <h1>É na EcoMarket</h1>
                 <p>Pague menos, como mais suadável!!</p>
-                <button>COMPRE AGORA</button>
+                <button><Link to="/listar">COMPRE AGORA</Link></button>
             </section>
 
             <section id="habilidades" className="secao-p1">

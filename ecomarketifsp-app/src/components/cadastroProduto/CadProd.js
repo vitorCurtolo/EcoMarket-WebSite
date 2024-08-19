@@ -15,6 +15,7 @@ function CadProd() {
   const [imagem, setImagem] = useState('');
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     try {
@@ -76,7 +77,7 @@ function CadProd() {
                   required
                   placeholder="R$ 0,00"
                   value={preco}
-                  onChange={(e) => setPreco(e.target.value)}
+                  onChange={(e) => setPreco(e.target.value.includes(",") ? e.target.value.replace(",", ".") : e.target.value)}
 
                 />
               </div>
@@ -139,7 +140,8 @@ function CadProd() {
             </div>
 
             <div>
-              <label htmlFor="imagem" className="form-label">Imagem produto</label>
+              <label htmlFor="imagem" className="form-label">Imagem produto <p>*Opte por uma imagem transparente para melhor experiência</p> </label> 
+           
               <input
                 type="text"
                 placeholder='imagem URL'

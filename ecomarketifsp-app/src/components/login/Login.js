@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
 import {
   Link, useNavigate
 } from "react-router-dom";
 import Image from "../../assets/img/cestaDesenho.png";
-
 import './Login.css';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail  } from 'firebase/auth';
 import { auth } from '../../assets/js/env.js';
 
-
-
 const Login = () => {
-
   const navigate = useNavigate();
 
   const [userEmail, setUserEmail] = useState('');
@@ -31,15 +27,26 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, userEmail, userPassword);
       console.log('User logged in:', userCredential.user);
-
-      //redireciona
       navigate("/home");
     } catch (error) {
-      alert("Erro ao logar")
+      alert("Erro ao logar");
       console.error('Error logging in:', error);
     }
   };
 
+  const handleForgotPassword = async () => {
+    if (!userEmail) {
+      alert("Por favor, insira seu email para recuperar a senha.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, userEmail);
+      alert("Email de recuperação de senha enviado!");
+    } catch (error) {
+      console.error('Error sending password reset email:', error);
+      alert("Erro ao enviar email de recuperação de senha.");
+    }
+  };
 
   return (
     <div className="login-main">
@@ -70,7 +77,7 @@ const Login = () => {
               </div>
 
               <div className="login-center-options">
-                <a href="#" className="forgot-pass-link">
+                <a href="#" className="forgot-pass-link" onClick={handleForgotPassword}>
                   Esqueceu sua senha?
                 </a>
               </div>

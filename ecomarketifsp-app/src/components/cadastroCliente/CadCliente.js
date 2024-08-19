@@ -159,12 +159,12 @@ function CadCliente() {
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="nome" className="form-label">Nome</label>
-                                <input type="text" name="nome" id="nome" className="form-input" />
+                                <input type="text" name="nome" id="nome" className="form-input" required />
                             </div>
 
                             <div>
                                 <label htmlFor="sobreNome" className="form-label"> Sobrenome </label>
-                                <input type="text" name="sobreNome" id="sobreNome" className="form-input" />
+                                <input type="text" name="sobreNome" id="sobreNome" className="form-input" required/>
                             </div>
                         </div>
 
@@ -180,6 +180,7 @@ function CadCliente() {
                                     onChange={handleInputChange}
                                     placeholder="Digite seu telefone"
                                     maxLength="14"
+                                    required
                                 />
                             </div>
                             <div>
@@ -192,6 +193,7 @@ function CadCliente() {
                                     className="form-input"
                                     value={cep}
                                     onChange={(e) => setCep(e.target.value)}
+                                    required
                                 />
                             </div>
 
@@ -200,30 +202,30 @@ function CadCliente() {
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="bairro" className="form-label"> Bairro </label>
-                                <input type="text" name="bairro" id="bairro" className="form-input" />
+                                <input type="text" name="bairro" id="bairro" className="form-input" required/>
                             </div>
 
                             <div>
                                 <label htmlFor="logradouro" className="form-label">Endereço</label>
-                                <input type="text" name="logradouro" id="logradouro" className="form-input" />
+                                <input type="text" name="logradouro" id="logradouro" className="form-input" required/>
                             </div>
                         </div>
 
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="localidade" className="form-label"> Cidade </label>
-                                <input type="text" name="localidade" id="localidade" className="form-input" />
+                                <input type="text" name="localidade" id="localidade" className="form-input" required/>
                             </div>
                             <div>
                                 <label htmlFor="uf" className="form-label"> Estado </label>
-                                <input type="text" name="uf" id="uf" className="form-input" />
+                                <input type="text" name="uf" id="uf" className="form-input" required/>
                             </div>
                         </div>
 
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="numero" className="form-label"> Número </label>
-                                <input type="text" name="numero" id="numero" className="form-input" />
+                                <input type="text" name="numero" id="numero" className="form-input" required/>
                             </div>
                             <div>
                                 <label htmlFor="comple" className="form-label"> Complemento </label>

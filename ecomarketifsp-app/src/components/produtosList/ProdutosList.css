@@ -132,11 +132,23 @@
     color: #777;
 }
 
-.formbold-btn {
+.formbold-btn-ls {
     display: flex;
     float: right;
     margin: 10px;
-}
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+  }
+  .formbold-btn-ls:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    background: orange;
+  }
 
 
 /* Responsive styles */
@@ -201,47 +213,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .modal-content {
-    text-align: center; 
+}
+
+.modal-content {
+    text-align: center;
     background-color: #fdf5e6;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     max-width: 700px;
     width: 90%;
+    max-height: 80%; /* Adicione esta linha para limitar a altura do modal */
+    overflow-y: auto; /* Adicione esta linha para permitir a rolagem vertical */
     text-align: center;
-  }
+}
 
-  .modal-content h2 {
+.modal-content h2 {
     font-size: 2em;
     color: #444;
     margin-bottom: 10px;
 }
-  
-  .modal-content ul {
+
+.modal-content ul {
+    max-height: 300px; /* Defina a altura máxima da lista */
+    overflow-y: auto; /* Adicione barra de rolagem à lista se necessário */
     list-style-type: none;
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .modal-content li {
+}
+
+.modal-content li {
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
     font-size: 1.2em;
     color: #555;
-  }
-  
-  .modal-footer {
+}
+
+.modal-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-  }
+}
 
-  /* Estilos dos botões */
+/* Estilos dos botões */
 .buyButton {
     background-color: #088178;
     color: #fff;
@@ -287,13 +303,29 @@
     background-color: #6f0029;
 }
 
-.form-input{
+.form-input-ls {
+    text-align: center;
     width: 60%;
     height:35px;
     margin: 5px;
-} 
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+}
+
+.form-input-ls:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
 .pesquisarButton {
-    height:35px;
+    height: 35px;
     background-color: #4f484a;
     color: #fff;
     border: none;
@@ -307,4 +339,3 @@
 .pesquisarButton:hover {
     background-color: #827e7f;
 }
-

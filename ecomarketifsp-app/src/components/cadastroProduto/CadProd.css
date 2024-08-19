@@ -86,6 +86,12 @@
     display: block;
     margin-bottom: 10px;
   }
+
+  .form-label p{
+    color: red;
+    font-size: small;
+    margin-top: 0px;
+  }
   
   .formbold-checkbox-label {
     display: flex;
@@ -132,6 +138,7 @@
     color: white;
     cursor: pointer;
     margin-top: 25px;
+    width: 100%;
   }
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);

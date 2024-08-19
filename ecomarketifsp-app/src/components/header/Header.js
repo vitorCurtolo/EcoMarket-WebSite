@@ -26,9 +26,9 @@ const Header = () => {
               <ul>
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/login">Log-In</Link></li>
-                <li><Link to="/produtos">Produtos</Link></li>
-                <li><Link to="/cadastro">Cadastro</Link></li>
-                <li><Link to="/listar">Listar</Link></li>
+                <li><Link to="/produtos">Cadastro Produto</Link></li>
+                <li><Link to="/cadastro">Cadastro Cliente</Link></li>
+                <li><Link to="/listar">Produtos</Link></li>
               </ul>
             </nav>
           </div>
@@ -43,10 +43,10 @@ const Header = () => {
               <nav className="header-list-nav-mob">
                 <ul>
                   <li><Link to="/home" onClick={toggleMobileMenu}>Home</Link></li>
-                  <li><Link to="/produtos" onClick={toggleMobileMenu}>Produtos</Link></li>
-                  <li><Link to="/cadastro" onClick={toggleMobileMenu}>Cadastro</Link></li>
+                  <li><Link to="/produtos" onClick={toggleMobileMenu}>Cadastro Produto</Link></li>
+                  <li><Link to="/cadastro" onClick={toggleMobileMenu}>Cadastro Cliente</Link></li>
                   <li><Link to="/cadastro" onClick={toggleMobileMenu}>Log-In</Link></li>
-                  <li><Link to="/listar" onClick={toggleMobileMenu}>Listar</Link></li>
+                  <li><Link to="/listar" onClick={toggleMobileMenu}>Produtos</Link></li>
                 </ul>
               </nav>
             </div>

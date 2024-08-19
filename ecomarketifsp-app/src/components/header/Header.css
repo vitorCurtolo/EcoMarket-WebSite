@@ -26,6 +26,10 @@
   display: inline;
 }
 
+.header-list-nav ul li:hover {
+  font-weight: 900;
+}
+
 .header-list-nav a {
   text-decoration: none;
   color: #088178;

@@ -60,18 +60,20 @@ const ProdutosList = () => {
     fetchProdutos();
   }, []);
 
-
   const adicionarAoCarrinho = (produto) => {
+    const novoTotal = total + parseFloat(produto.preco);
     setCarrinho([...carrinho, produto]);
-    setTotal(total + parseFloat(produto.preco, 10));
+    setTotal(parseFloat(novoTotal.toFixed(2)));
   };
+  
 
   const removerDoCarrinho = (index) => {
     const itemRemovido = carrinho[index];
+    const novoTotal = total - parseFloat(itemRemovido.preco);
     setCarrinho(carrinho.filter((_, i) => i !== index));
-    setTotal(total - parseFloat(itemRemovido.preco, 10));
+    setTotal(parseFloat(novoTotal.toFixed(2)));
   };
-
+  
   const toggleModal = () => {
     setMostrarModal(!mostrarModal);
   };
@@ -86,11 +88,24 @@ const ProdutosList = () => {
     setMostrarForm(false);
     alert("PEDIDO REGISTRADO!!");
     setButtonEnabled(false);
+    zerarVariaveis();
   }
+
+  const zerarVariaveis = () =>{
+    setCarrinho([]);
+    setTotal(0);
+    setEmail("");
+    setEndereco("");
+    setNome("");
+    setNumero("");
+    setNumero("");
+    setTelefone("");
+    setTotalCompra("");
+    }
 
   const procurarCliente = () => {
 
-    const dados = clientes.find(cliente => cliente.email === email);
+    const dados = clientes.find(cliente => cliente.email.toLowerCase() === email.toLowerCase());
 
     if (dados) {
       setButtonEnabled(true);
@@ -115,7 +130,7 @@ const ProdutosList = () => {
 
       <input
         type="submit"
-        className="formbold-btn"
+        className="formbold-btn-ls"
         value={`Concluir compra: R$ ${total}`}
         onClick={toggleModal}
       />
@@ -149,7 +164,9 @@ const ProdutosList = () => {
               <h4>{produto.nome}</h4>
               <h3>{produto.descricao} </h3>
               <h4 className="preco">R${produto.preco}</h4>
-              <a href="#" className="buy-icon"><i className="fa-solid fa-cart-shopping"></i></a>
+              <button onClick={() => adicionarAoCarrinho(produto)} className="buy-icon">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </button>
             </div>
           ))}
         </div>
@@ -165,7 +182,9 @@ const ProdutosList = () => {
               <h4>{produto.nome}</h4>
               <h3>{produto.descricao} </h3>
               <h4 className="preco">R${produto.preco}</h4>
-              <a href="#" className="buy-icon"><i className="fa-solid fa-cart-shopping"></i></a>
+              <button onClick={() => adicionarAoCarrinho(produto)} className="buy-icon">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </button>
             </div>
           ))}
         </div>
@@ -181,7 +200,9 @@ const ProdutosList = () => {
               <h4>{produto.nome}</h4>
               <h3>{produto.descricao} </h3>
               <h4 className="preco">R${produto.preco}</h4>
-              <a href="#" className="buy-icon"><i className="fa-solid fa-cart-shopping"></i></a>
+              <button onClick={() => adicionarAoCarrinho(produto)} className="buy-icon">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </button>
             </div>
           ))}
         </div>
@@ -217,7 +238,7 @@ const ProdutosList = () => {
             <input
               type="text"
               id="nome"
-              className="form-input"
+              className="form-input-ls"
               placeholder='Entre com seu e-mail cadastrado'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
