@@ -68,8 +68,5 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
-
-# environment 
-src/assets/js
  
 
