@@ -5,7 +5,7 @@ import {
 import React, { useState } from 'react';
 import './Header.css';
 import '../../assets/styles/fonts.css';
-import logo from '../../assets/img/logo-2.png';
+import logo from '../../assets/img/logoEcoMarket.png';
 import CadCliente from '../cadastroCliente/CadCliente';
 
 const Header = () => {
