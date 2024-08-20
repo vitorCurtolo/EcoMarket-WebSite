@@ -1,6 +1,6 @@
 # Website Para Produtos Orgânicos
 
-Nesse reporsitório está presente o website criado para simular um e-commerce de produtos orgâncos
+Nesse reporsitório está presente o website criado para simular um e-commerce de produtos orgâncos.
 
 ## :heavy_check_mark: Authors
 
