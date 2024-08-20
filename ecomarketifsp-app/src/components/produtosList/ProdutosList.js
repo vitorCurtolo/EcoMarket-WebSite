@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../assets/js/env';
 import './ProdutosList.css'
+import { useAuth } from '../../context/AuthContext';
 
 const ProdutosList = () => {
+
+  const { currentUser } = useAuth();
 
   //banco de dados
   const [produtos, setProdutos] = useState([]);
@@ -65,7 +68,7 @@ const ProdutosList = () => {
     setCarrinho([...carrinho, produto]);
     setTotal(parseFloat(novoTotal.toFixed(2)));
   };
-  
+
 
   const removerDoCarrinho = (index) => {
     const itemRemovido = carrinho[index];
@@ -73,9 +76,12 @@ const ProdutosList = () => {
     setCarrinho(carrinho.filter((_, i) => i !== index));
     setTotal(parseFloat(novoTotal.toFixed(2)));
   };
-  
+
   const toggleModal = () => {
-    setMostrarModal(!mostrarModal);
+    if (currentUser) {
+      setMostrarModal(!mostrarModal);
+    }
+    else { alert("É PRECISO ESTAR LOGADO") }
   };
 
   const toggleForm = () => {
@@ -91,7 +97,7 @@ const ProdutosList = () => {
     zerarVariaveis();
   }
 
-  const zerarVariaveis = () =>{
+  const zerarVariaveis = () => {
     setCarrinho([]);
     setTotal(0);
     setEmail("");
@@ -101,7 +107,7 @@ const ProdutosList = () => {
     setNumero("");
     setTelefone("");
     setTotalCompra("");
-    }
+  }
 
   const procurarCliente = () => {
 
@@ -222,7 +228,7 @@ const ProdutosList = () => {
             </ul>
             <div className="modal-footer">
               <button className='closeButton' onClick={toggleModal}>Fechar</button>
-              <button  style={total == 0 ?
+              <button style={total == 0 ?
                 styles.disabledButton : styles.enabledButton}
                 disabled={total == 0} className='buyButton' onClick={toggleForm}>Prosseguir</button>
             </div>
