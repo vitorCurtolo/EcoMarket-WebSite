@@ -9,6 +9,7 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+build/
 
 # Firebase config
 
@@ -69,7 +70,6 @@ node_modules/
 .dataconnect
 
 # environment 
-src/assets/js/*
+src/assets/js
+ 
 
-#build 
-build/*
