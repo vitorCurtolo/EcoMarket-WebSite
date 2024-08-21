@@ -21,8 +21,8 @@ function Main() {
             <section id="card">
                 <h4>Dia de Feira,</h4>
                 <h1>É na EcoMarket</h1>
-                <p>Pague menos, como mais suadável!!</p>
-                <button><Link to="/listar">COMPRE AGORA</Link></button>
+                <p>Pague menos, coma mais suadável!!</p>
+                <Link to="/listar"><button>COMPRE AGORA</button></Link>
             </section>
 
             <section id="habilidades" className="secao-p1">

@@ -39,6 +39,10 @@ const Header = () => {
       }).catch((error) => {
           console.error('An error happened:', error);
       });
+
+      if(isMobileMenuOpen){
+        toggleMobileMenu(!isMobileMenuOpen)
+      }
   };
 
   return (
@@ -72,7 +76,8 @@ const Header = () => {
                   <li><Link to="/home" onClick={toggleMobileMenu}>Home</Link></li>
                   <li><Link to="/produtos" onClick={toggleMobileMenu}>Cadastro Produto</Link></li>
                   <li><Link to="/cadastro" onClick={toggleMobileMenu}>Cadastro Cliente</Link></li>
-                  <li><Link to="/cadastro" onClick={toggleMobileMenu}>Log-In</Link></li>
+                  {!isLogged && (<li><Link to="/login" onClick={toggleMobileMenu}>Sign-in</Link></li>)}
+                  {isLogged && (<li><a onClick={signOutUser} >Sign-out</a></li>)}
                   <li><Link to="/listar" onClick={toggleMobileMenu}>Produtos</Link></li>
                 </ul>
               </nav>

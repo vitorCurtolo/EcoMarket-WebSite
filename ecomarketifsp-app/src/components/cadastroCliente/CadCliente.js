@@ -9,10 +9,19 @@ import { db } from '../../assets/js/env'
 function CadCliente() {
 
     //formatação de campo telefone
-
     const [phone, setPhone] = useState('');
     const [cep, setCep] = useState('');
     const { currentUser } = useAuth();
+
+    //dados cliente
+    const [nome, setNome] = useState('');
+    const [sobreNome, setSobreNome] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [endereco, setLogradouro] = useState('');
+    const [cidade, setLocalidade] = useState('');
+    const [uf, setUf] = useState('');
+    const [numero, setNumero] = useState('');
+    const [complemento, setComple] = useState('');
 
     const handleInputChange = (event) => {
         const input = event.target.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
@@ -104,38 +113,26 @@ function CadCliente() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        const newCliente = {
-            nome: event.target.nome.value,
-            sobreNome: event.target.sobreNome.value,
-            email: currentUser.email,
-            telefone: event.target.phone.value,
-            estado: event.target.uf.value,
-            cidade: event.target.localidade.value,
-            cep: event.target.cep.value,
-            endereco: event.target.logradouro.value,
-            bairro: event.target.bairro.value,
-            numero: event.target.numero.value,
-            complemento: event.target.comple.value,
-        }
         try {
             await addDoc(collection(db, 'clientes'), {
-                nome: newCliente.nome,
-                sobreNome: newCliente.sobreNome,
-                email: newCliente.email,
-                telefone: newCliente.telefone,
-                estado: newCliente.estado,
-                cidade: newCliente.cidade,
-                cep: newCliente.cep,
-                endereco: newCliente.endereco,
-                bairro: newCliente.bairro,
-                numero: newCliente.numero,
-                complemento: newCliente.complemento,
+                nome,
+                sobreNome,
+                email: currentUser.email,
+                phone,
+                uf,
+                cidade,
+                cep,
+                endereco,
+                bairro,
+                numero,
+                complemento,
                 createdAt: new Date()
             });
+
             alert("Cadastro realizado!!");
             console.log('Cliente cadastrado com sucesso!');
             cleanFields();
+
         } catch (error) {
             alert("Erro ao cadastrar !");
             console.error('Erro ao cadastrar cliente:', error);
@@ -159,12 +156,26 @@ function CadCliente() {
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="nome" className="form-label">Nome</label>
-                                <input type="text" name="nome" id="nome" className="form-input" required />
+                                <input
+                                    type="text"
+                                    name="nome"
+                                    id="nome"
+                                    className="form-input"
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                    required />
                             </div>
 
                             <div>
                                 <label htmlFor="sobreNome" className="form-label"> Sobrenome </label>
-                                <input type="text" name="sobreNome" id="sobreNome" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="sobreNome"
+                                    id="sobreNome"
+                                    value={sobreNome}
+                                    onChange={(e) => setSobreNome(e.target.value)}
+                                    className="form-input"
+                                    required />
                             </div>
                         </div>
 
@@ -202,34 +213,76 @@ function CadCliente() {
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="bairro" className="form-label"> Bairro </label>
-                                <input type="text" name="bairro" id="bairro" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="bairro"
+                                    id="bairro"
+                                    className="form-input"
+                                    value={bairro}
+                                    onChange={(e) => setBairro(e.target.value)}
+                                    required />
                             </div>
 
                             <div>
                                 <label htmlFor="logradouro" className="form-label">Endereço</label>
-                                <input type="text" name="logradouro" id="logradouro" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="logradouro"
+                                    id="logradouro"
+                                    className="form-input"
+                                    value={endereco}
+                                    onChange={(e) => setLogradouro(e.target.value)}
+                                    required />
                             </div>
                         </div>
 
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="localidade" className="form-label"> Cidade </label>
-                                <input type="text" name="localidade" id="localidade" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="localidade"
+                                    id="localidade"
+                                    className="form-input"
+                                    value={cidade}
+                                    onChange={(e) => setLocalidade(e.target.value)}
+                                    required />
                             </div>
                             <div>
                                 <label htmlFor="uf" className="form-label"> Estado </label>
-                                <input type="text" name="uf" id="uf" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="uf"
+                                    id="uf"
+                                    className="form-input"
+                                    value={uf}
+                                    onChange={(e) => setUf(e.target.value)}
+                                    required />
                             </div>
                         </div>
 
                         <div className="form-input-flex">
                             <div>
                                 <label htmlFor="numero" className="form-label"> Número </label>
-                                <input type="text" name="numero" id="numero" className="form-input" required/>
+                                <input
+                                    type="text"
+                                    name="numero"
+                                    id="numero"
+                                    className="form-input"
+                                    value={numero}
+                                    onChange={(e) => setNumero(e.target.value)}
+                                    required />
                             </div>
                             <div>
                                 <label htmlFor="comple" className="form-label"> Complemento </label>
-                                <input type="text" name="comple" id="comple" className="form-input" />
+                                <input
+                                    type="text"
+                                    name="comple"
+                                    id="comple"
+                                    className="form-input"
+                                    value={complemento}
+                                    onChange={(e) => setComple(e.target.value)}
+                                />
                             </div>
                         </div>
 
