@@ -55,7 +55,7 @@ function Main() {
                     <div className="produto-card">
                         <img src={img_cesta1} alt="imagem produto" />
                             <span>Cesta</span>
-                            <h4>Cesta Júnior</h4>
+                            <h4>Cesta Pequena</h4>
                             <div className="stars">
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
@@ -63,13 +63,13 @@ function Main() {
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
                             </div>
-                            <h4 className="preco">R$ 50,00</h4>
+                            <h4 className="preco">R$ 24,90</h4>
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cesta1} alt="imagem produto" />
                             <span>Cesta</span>
-                            <h4>Cesta Júnior</h4>
+                            <h4>Cesta Média</h4>
                             <div className="stars">
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
@@ -77,13 +77,13 @@ function Main() {
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
                             </div>
-                            <h4 className="preco">R$ 50,00</h4>
+                            <h4 className="preco">R$ 49,90</h4>
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cesta1} alt="imagem produto" />
                             <span>Cesta</span>
-                            <h4>Cesta Júnior</h4>
+                            <h4>Cesta Grande</h4>
                             <div className="stars">
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
@@ -91,13 +91,13 @@ function Main() {
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
                             </div>
-                            <h4 className="preco">R$ 50,00</h4>
+                            <h4 className="preco">R$ 74,90</h4>
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cesta1} alt="imagem produto" />
                             <span>Cesta</span>
-                            <h4>Cesta Júnior</h4>
+                            <h4>Cesta Familia</h4>
                             <div className="stars">
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
@@ -105,7 +105,7 @@ function Main() {
                                 <i className="fa-solid fa-star"></i>
                                 <i className="fa-solid fa-star"></i>
                             </div>
-                            <h4 className="preco">R$ 50,00</h4>
+                            <h4 className="preco">R$ 124,90</h4>
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                 </div>
