@@ -10,6 +10,11 @@ import hab_5 from '../../assets/img/habilidades/f5.png';
 import img_cesta1 from '../../assets/img/cesta1.png';
 import img_tomate from '../../assets/img/tomate.png';
 import img_alface from '../../assets/img/alface.png';
+import img_cestaP from '../../assets/img/P_semBG.png';
+import img_cestaM from '../../assets/img/M_semBG.png';
+import img_cestaG from '../../assets/img/G_semBG.png';
+import img_cestaF from '../../assets/img/F_semBG.png';
+
 import {
     Link
 } from "react-router-dom";
@@ -53,7 +58,7 @@ function Main() {
                 <p>Todos colhidos com muito amor</p>
                 <div className="pro-colecao">
                     <div className="produto-card">
-                        <img src={img_cesta1} alt="imagem produto" />
+                        <img src={img_cestaP} alt="imagem produto" />
                             <span>Cesta</span>
                             <h4>Cesta Pequena</h4>
                             <div className="stars">
@@ -67,7 +72,7 @@ function Main() {
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
-                        <img src={img_cesta1} alt="imagem produto" />
+                        <img src={img_cestaM} alt="imagem produto" />
                             <span>Cesta</span>
                             <h4>Cesta Média</h4>
                             <div className="stars">
@@ -81,7 +86,7 @@ function Main() {
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
-                        <img src={img_cesta1} alt="imagem produto" />
+                        <img src={img_cestaG} alt="imagem produto" />
                             <span>Cesta</span>
                             <h4>Cesta Grande</h4>
                             <div className="stars">
@@ -95,7 +100,7 @@ function Main() {
                             <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
-                        <img src={img_cesta1} alt="imagem produto" />
+                        <img src={img_cestaF} alt="imagem produto" />
                             <span>Cesta</span>
                             <h4>Cesta Familia</h4>
                             <div className="stars">
