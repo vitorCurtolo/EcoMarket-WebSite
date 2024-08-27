@@ -7,9 +7,10 @@ import hab_3 from '../../assets/img/habilidades/f3.png';
 import hab_4 from '../../assets/img/habilidades/f4.png';
 import hab_5 from '../../assets/img/habilidades/f5.png';
 
-import img_cesta1 from '../../assets/img/cesta1.png';
 import img_tomate from '../../assets/img/tomate.png';
 import img_alface from '../../assets/img/alface.png';
+import img_batata from '../../assets/img/batata.png';
+import img_cenoura from '../../assets/img/cenoura.png';
 import img_cestaP from '../../assets/img/P_semBG.png';
 import img_cestaM from '../../assets/img/M_semBG.png';
 import img_cestaG from '../../assets/img/G_semBG.png';
@@ -33,85 +34,84 @@ function Main() {
             <section id="habilidades" className="secao-p1">
                 <div className="h-box">
                     <img src={hab_1} alt="compra online" />
-                        <h6>Compre Online</h6>
+                    <h6>Compre Online</h6>
                 </div>
                 <div className="h-box">
                     <img src={hab_2} alt="envico rápido" />
-                        <h6>Envio rápido</h6>
+                    <h6>Envio rápido</h6>
                 </div>
                 <div className="h-box">
                     <img src={hab_3} alt="economize" />
-                        <h6>Economize</h6>
+                    <h6>Economize</h6>
                 </div>
                 <div className="h-box">
                     <img src={hab_4} alt="promoções" />
-                        <h6>Promoções</h6>
+                    <h6>Promoções</h6>
                 </div>
                 <div className="h-box">
                     <img src={hab_5} alt="suporte" />
-                        <h6>Suporte 24H</h6>
+                    <h6>Suporte 24H</h6>
                 </div>
             </section>
 
             <section className="produto-sec">
                 <h1>Nossas Cestas</h1>
                 <p>Todos colhidos com muito amor</p>
+                <br></br><br></br>
                 <div className="pro-colecao">
                     <div className="produto-card">
                         <img src={img_cestaP} alt="imagem produto" />
-                            <span>Cesta</span>
-                            <h4>Cesta Pequena</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$ 24,90</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Cesta</span>
+                        <h4>Cesta Pequena</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$ 24,90</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaM} alt="imagem produto" />
-                            <span>Cesta</span>
-                            <h4>Cesta Média</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$ 49,90</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Cesta</span>
+                        <h4>Cesta Média</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$ 49,90</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaG} alt="imagem produto" />
-                            <span>Cesta</span>
-                            <h4>Cesta Grande</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$ 74,90</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Cesta</span>
+                        <h4>Cesta Grande</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$ 74,90</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaF} alt="imagem produto" />
-                            <span>Cesta</span>
-                            <h4>Cesta Familia</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$ 124,90</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Cesta</span>
+                        <h4>Cesta Familia</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$ 124,90</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                 </div>
             </section>
@@ -119,62 +119,61 @@ function Main() {
             <section className="produto-sec">
                 <h1>Também Temos Produtos</h1>
                 <p>Todos colhidos com muito amor</p>
+                <br></br><br></br>
                 <div className="pro-colecao">
                     <div className="produto-card">
                         <img src={img_tomate} alt="imagem produto" />
-                            <span>Produto</span>
-                            <h4>Tomata Holandês</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$20,00 kg</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
-                    </div>
-                    <div className="produto-card">
-                        <img src={img_alface}  alt="imagem produto" />
-                            <span>Produto</span>
-                            <h4>Alface Americano</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$7,00 un</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
-                    </div>
-                    <div className="produto-card">
-                        <img src={img_tomate}  alt="imagem produto" />
-                            <span>Produto</span>
-                            <h4>Tomata Holandês</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$20,00 kg</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Produto</span>
+                        <h4>Tomate Holandês</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$20,00 kg</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_alface} alt="imagem produto" />
-                            <span>Produto</span>
-                            <h4>Alface Americano</h4>
-                            <div className="stars">
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                                <i className="fa-solid fa-star"></i>
-                            </div>
-                            <h4 className="preco">R$7,00 un</h4>
-                            <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <span>Produto</span>
+                        <h4>Alface Americano</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                        </div>
+                        <h4 className="preco">R$7,00 un</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                    </div>
+                    <div className="produto-card">
+                        <img src={img_cenoura} alt="imagem produto" />
+                        <span>Produto</span>
+                        <h4>Cenoura</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+
+                        </div>
+                        <h4 className="preco">R$10,00 kg</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                    </div>
+                    <div className="produto-card">
+                        <img src={img_batata} alt="imagem produto" />
+                        <span>Produto</span>
+                        <h4>Batata</h4>
+                        <div className="stars">
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+
+                        </div>
+                        <h4 className="preco">R$12,00 un</h4>
+                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                 </div>
             </section>
@@ -206,7 +205,7 @@ function Main() {
                 </div>
                 <div className="form">
                     <input type="email" placeholder="Seu e-mail" id="email-input" />
-                        <button>Assinar</button>
+                    <button>Assinar</button>
                 </div>
             </section>
 
