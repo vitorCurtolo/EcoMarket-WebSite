@@ -34,9 +34,8 @@ const Header = () => {
   const signOutUser = () => {
       signOut(auth).then(() => {
         alert("Usuário desconectado!!")
-          console.log('Sign-out successful.');
       }).catch((error) => {
-          console.error('An error happened:', error);
+          console.error('Erro ao sair:', error);
       });
 
       if(isMobileMenuOpen){

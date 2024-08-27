@@ -144,7 +144,6 @@ const ProdutosList = () => {
       <section className="produtos-section-ls">
         <h2>Destaques</h2>
         <div className="produtos-list-ls">
-
           {produtos.map((produto, index) => (
             <div className="produto-card-ls" key={index}>
               <img src={produto.imagem} alt={`Imagem de ${produto.nome}`} />

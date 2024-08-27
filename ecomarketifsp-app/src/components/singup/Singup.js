@@ -32,7 +32,6 @@ const Singup = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, userEmail, userPassword);
       
       //alerta para usuário
-      console.log('User signed up:', userCredential.user);
       alert("Usuário cadastrado com sucesso");
 
       //limpar campos de login
@@ -52,7 +51,6 @@ const Singup = () => {
       document.getElementById("userPassword").value = "";
     }
   };
-
 
   return (
     <div className="login-main">
@@ -88,7 +86,7 @@ const Singup = () => {
           </div>
 
           <p className="login-bottom-p">
-            Já tem uma conta? <Link to="/login">Log in</Link>
+            Já tem uma conta? <Link to="/login">Entrar</Link>
           </p>
         </div>
       </div>

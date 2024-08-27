@@ -1,6 +1,7 @@
 import './Footer.css';
 import '../../assets/styles/fonts.css';
 import img_payments from '../../assets/img/pay.png';
+import img_mst from '../../assets/img/Logo_MST.png';
 
 
 function Footer() {
@@ -33,21 +34,14 @@ function Footer() {
           <a href="/home">Termos e condições</a>
           <a href="/home">Nos contate</a>
         </div>
-        <div className="conta ">
-          <h3>Conta</h3>
-          <br />
-          <a href="/home">Entrar</a>
-          <a href="/home">Compras</a>
-          <a href="/home">Carrinho</a>
-          <a href="/home">Rastrear Pedido</a>
-          <a href="/home">Ajuda</a>
-        </div>
         <div className="pagamento">
           <h3>Pagamentos</h3>
           <br />
           <p>Site Seguro - Pagamentos Seguros</p>
           <img src={img_payments} alt="" />
         </div>
+        
+        <img className='mst' src={img_mst} alt="" />
 
       </div>
 

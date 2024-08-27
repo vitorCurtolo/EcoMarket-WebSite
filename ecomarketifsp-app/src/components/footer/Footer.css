@@ -28,6 +28,11 @@
     padding: 8px 0;
 }
 
+#footer .pagamento img {
+    max-width: 100px; /* Ajuste o valor conforme necessário */
+    margin-right: 10px;
+    margin-top: 10px;
+}
 
 /*
 Responsividade para footer
@@ -37,15 +42,18 @@ Responsividade para footer
         flex-direction: column;
         align-items: center;
     }
-}
 
-@media (max-width: 730px) {
-    #footer>div {
+    #footer > div {
         min-width: 100%;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
     .sociais a {
         margin: 5px;
+    }
+
+    #footer .pagamento img {
+        max-width: 80px; /* Reduz o tamanho das imagens para dispositivos móveis */
+        margin-right: 5px;
     }
 }

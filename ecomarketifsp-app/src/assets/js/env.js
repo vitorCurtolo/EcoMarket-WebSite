@@ -26,7 +26,6 @@ const db = getFirestore(app);
 // Configura a persistência de sessão para "SESSION"
 setPersistence(auth, browserSessionPersistence)
   .then(() => {
-    console.log('Persistência de sessão configurada para SESSION');
   })
   .catch((error) => {
     console.error('Erro ao configurar persistência de sessão:', error);

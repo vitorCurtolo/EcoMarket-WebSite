@@ -28,7 +28,6 @@ function CadProd() {
         validade,
         imagem
       });
-      console.log('Produto registrado com ID: ', docRef.id);
       alert('Produto cadastrado com sucesso!');
 
       // Limpar os campos do formulário
