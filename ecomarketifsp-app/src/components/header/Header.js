@@ -54,12 +54,12 @@ const Header = () => {
               <div className="header-list">
                   <nav className="header-list-nav">
                       <ul>
-                          <li><Link to="/home">Home</Link></li>
-                          {!isLogged && (<li><Link to="/login">Sign-in</Link></li>)}
-                          {isLogged && (<li><a onClick={signOutUser}>Sign-out</a></li>)}
+                          <li><Link to="/home">Inicio</Link></li>
                           <li><Link to="/produtos">Cadastro Produto</Link></li>
                           <li><Link to="/cadastro">Cadastro Cliente</Link></li>
                           <li><Link to="/listar">Produtos</Link></li>
+                          {!isLogged && (<li><Link to="/login">Entrar</Link></li>)}
+                          {isLogged && (<li><a onClick={signOutUser}>Sair</a></li>)}
                       </ul>
                   </nav>
               </div>
@@ -73,11 +73,11 @@ const Header = () => {
             <div className="header-list-mob" id="teste">
               <nav className="header-list-nav-mob">
                 <ul>
-                  <li><Link to="/home" onClick={toggleMobileMenu}>Home</Link></li>
+                  <li><Link to="/home" onClick={toggleMobileMenu}>Inicio</Link></li>
                   <li><Link to="/produtos" onClick={toggleMobileMenu}>Cadastro Produto</Link></li>
                   <li><Link to="/cadastro" onClick={toggleMobileMenu}>Cadastro Cliente</Link></li>
-                  {!isLogged && (<li><Link to="/login" onClick={toggleMobileMenu}>Sign-in</Link></li>)}
-                  {isLogged && (<li><a onClick={signOutUser} >Sign-out</a></li>)}
+                  {!isLogged && (<li><Link to="/login" onClick={toggleMobileMenu}>Entrar</Link></li>)}
+                  {isLogged && (<li><a onClick={signOutUser} >Sair</a></li>)}
                   <li><Link to="/listar" onClick={toggleMobileMenu}>Produtos</Link></li>
                 </ul>
               </nav>
