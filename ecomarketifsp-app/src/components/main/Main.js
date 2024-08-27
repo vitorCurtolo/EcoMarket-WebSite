@@ -71,7 +71,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$ 24,90</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaM} alt="imagem produto" />
@@ -84,7 +84,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$ 49,90</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaG} alt="imagem produto" />
@@ -97,7 +97,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$ 74,90</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cestaF} alt="imagem produto" />
@@ -111,7 +111,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$ 124,90</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                 </div>
             </section>
@@ -133,7 +133,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$20,00 kg</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_alface} alt="imagem produto" />
@@ -146,7 +146,7 @@ function Main() {
                             <i className="fa-solid fa-star"></i>
                         </div>
                         <h4 className="preco">R$7,00 un</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_cenoura} alt="imagem produto" />
@@ -159,7 +159,7 @@ function Main() {
 
                         </div>
                         <h4 className="preco">R$10,00 kg</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                     <div className="produto-card">
                         <img src={img_batata} alt="imagem produto" />
@@ -173,7 +173,7 @@ function Main() {
 
                         </div>
                         <h4 className="preco">R$12,00 un</h4>
-                        <a href="#"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
+                        <a href="/listar"><i className="fa-solid fa-cart-shopping buy-icon"></i></a>
                     </div>
                 </div>
             </section>

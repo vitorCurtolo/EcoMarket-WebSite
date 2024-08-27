@@ -6,7 +6,6 @@ import React, { useState, useEffect   } from 'react';
 import './Header.css';
 import '../../assets/styles/fonts.css';
 import logo from '../../assets/img/logoEcoMarket.png';
-import CadCliente from '../cadastroCliente/CadCliente';
 import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
 
 const Header = () => {

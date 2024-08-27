@@ -60,7 +60,7 @@ function CadCliente() {
 
     //consultar api de CEP
 
-    const [json, setJson] = useState({});
+    const [setJson] = useState({});
 
 
     useEffect(() => {

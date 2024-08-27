@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import Footer from '../footer/Footer';
 import Header from '../header/Header'
 import Main from '../main/Main';

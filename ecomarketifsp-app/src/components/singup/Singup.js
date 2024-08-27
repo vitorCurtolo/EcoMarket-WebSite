@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
-  Link, Navigate, useNavigate 
+  Link, useNavigate 
 } from "react-router-dom";
 import Image from "../../assets/img/cestaDesenho.png";
 import './Singup.css';
@@ -14,7 +14,7 @@ import './Singup.css';
 const Singup = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword] = useState(false);
 
   const handleEmailChange = (event) => {
     setUserEmail(event.target.value);

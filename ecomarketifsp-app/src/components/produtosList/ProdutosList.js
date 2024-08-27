@@ -228,9 +228,9 @@ const ProdutosList = () => {
             </ul>
             <div className="modal-footer">
               <button className='closeButton' onClick={toggleModal}>Fechar</button>
-              <button style={total == 0 ?
+              <button style={total === 0 ?
                 styles.disabledButton : styles.enabledButton}
-                disabled={total == 0} className='buyButton' onClick={toggleForm}>Prosseguir</button>
+                disabled={total === 0} className='buyButton' onClick={toggleForm}>Prosseguir</button>
             </div>
           </div>
         </div>

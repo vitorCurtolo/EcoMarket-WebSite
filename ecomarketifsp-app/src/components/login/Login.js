@@ -12,7 +12,7 @@ const Login = () => {
 
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword] = useState(false);
 
   const handleEmailChange = (event) => {
     setUserEmail(event.target.value);
@@ -77,7 +77,7 @@ const Login = () => {
               </div>
 
               <div className="login-center-options">
-                <a href="#" className="forgot-pass-link" onClick={handleForgotPassword}>
+                <a href="/home" className="forgot-pass-link" onClick={handleForgotPassword}>
                   Esqueceu sua senha?
                 </a>
               </div>
