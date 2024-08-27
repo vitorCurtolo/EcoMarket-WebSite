@@ -159,7 +159,7 @@ function CadCliente() {
                                     value={phone}
                                     onChange={handleInputChange}
                                     placeholder="Digite seu telefone"
-                                    maxLength="14"
+                                    maxLength="15"
                                     required
                                 />
                             </div>

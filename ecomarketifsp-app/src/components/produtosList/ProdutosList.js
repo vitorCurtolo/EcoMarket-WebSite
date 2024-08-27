@@ -122,7 +122,7 @@ const ProdutosList = () => {
       setTotalCompra(total + 10);
     } else {
       setButtonEnabled(false);
-      alert("EMAIL NÃO CADASTRADO!!");
+      alert("EMAIL NÃO CADASTRADO!! Cadastre um novo cliente");
     }
 
   }
