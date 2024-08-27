@@ -77,7 +77,7 @@ const Login = () => {
               </div>
 
               <div className="login-center-options">
-                <a href="/home" className="forgot-pass-link" onClick={handleForgotPassword}>
+                <a href="#" className="forgot-pass-link" onClick={handleForgotPassword}>
                   Esqueceu sua senha?
                 </a>
               </div>
