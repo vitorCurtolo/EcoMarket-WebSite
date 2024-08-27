@@ -15,7 +15,7 @@ import ProdutosList from '../produtosList/ProdutosList';
 const AppContent = () => {
   const location = useLocation();
   const isLoginRoute = location.pathname === '/login';
-  const isSignupRoute = location.pathname === '/signup';
+  const isSignupRoute = location.pathname === '/singup';
 
   return (
     <>
@@ -24,7 +24,7 @@ const AppContent = () => {
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Singup />} />
+        <Route path="/singup" element={<Singup />} />
         <Route path="/produtos" element={<ProtectedRoute element={CadProd} />} />
         <Route path="/cadastro" element={<ProtectedRoute element={CadCliente} />} />
         <Route path="/listar" element={<ProdutosList/>} />
